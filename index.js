@@ -23,7 +23,7 @@ const logBuffer = {
     push(str) {
         this.buf.push(str);
         this.listeners.forEach(f => f(str, this.buf));
-        if(this.maxSize === this.buf.length) {
+        if (this.maxSize === this.buf.length) {
             this.buf.shift();
         }
     }
@@ -69,7 +69,7 @@ const setupSock = _sock => {
 
         $('#single-user-select').html(
             Array.from(sounds.keys())
-                .map( u => `<option>${u}</option>` )
+                .map(u => `<option>${u}</option>`)
                 .reduce((acc, x) => acc + x, '')
         ).change();
 
@@ -78,7 +78,7 @@ const setupSock = _sock => {
 
     _sock.on('config', config => {
         classes = config;
-        platforms = Array.from( new Set( config.map(c => c.platform) ) );
+        platforms = Array.from(new Set(config.map(c => c.platform)));
 
         const opts = config.map(c => `<option>${c.className}</option>`).reduce((acc, x) => acc + x, "");
         const platformOpts = platforms.map(c => `<option>${c}</option>`).reduce((acc, x) => acc + x, "");
@@ -100,7 +100,10 @@ $(
 
         $('#all-user-custom-class-join').click(e => {
             e.preventDefault();
-            socket.emit('join', {platform: $('#all-user-custom-class-platform').val(), opts: $('#all-user-custom-class-url')});
+            socket.emit('join', {
+                platform: $('#all-user-custom-class-platform').val(),
+                opts: $('#all-user-custom-class-url').val()
+            });
         });
 
         $('#all-user-leave').click(e => {
@@ -122,7 +125,11 @@ $(
         $('#single-user-custom-class-join').click(e => {
             e.preventDefault();
             const target = $('#single-user-select').val();
-            socket.emit('join', {platform: $('#single-user-custom-class-platform').val(), opts: $('#single-user-custom-class-url'), target});
+            socket.emit('join', {
+                platform: $('#single-user-custom-class-platform').val(),
+                opts: $('#single-user-custom-class-url').val(),
+                target
+            });
         });
 
         $('#single-user-leave').click(e => {
@@ -141,7 +148,7 @@ $(
 
 $(
     () => {
-        $('#connect-btn').click( e => {
+        $('#connect-btn').click(e => {
             e.preventDefault();
             socket && socket.close();
             const socketUrl = $('#socketUrl').val(),
@@ -167,7 +174,7 @@ $(
     () => {
         $(document).on("playSound", e => {
             const sound = e.originalEvent.whom.getAttribute('data-id'),
-                  target = $('#single-user-select').val();
+                target = $('#single-user-select').val();
             socket.emit('play', {target, sound});
             addToLog(`Played sound '${sound}' to ${target}`);
         })
