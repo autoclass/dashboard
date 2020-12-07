@@ -70,7 +70,15 @@
                     </div>
                 </div>
                 <div class="card shadow-sm border-primary my-3">
-                    <div class="card-header border-secondary border-bottom font-weight-bold">Pojedinačne kontrole</div>
+                    <div class="card-header border-secondary border-bottom font-weight-bold align-middle">
+                        Pojedinačne kontrole
+                        <button class="float-right btn-outline-dark btn mb-n1" id="dropdownMenuButton" data-toggle="dropdown" style="padding: 0 !important;"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        </svg></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="document.dispatchEvent(new Event('resetAhk'))">Resetuj AHK skriptu</a>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <form>
                             <div class="form-row">

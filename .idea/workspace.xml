@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="359bdaae-8b0e-4e50-9193-d2e1adf5dcc2" name="Default Changelist" comment="" />
+    <list default="true" id="359bdaae-8b0e-4e50-9193-d2e1adf5dcc2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1l4k5QpXZD7lJnS8twfXLFX7W9R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dispatch-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -53,7 +61,10 @@
       <workItem from="1607034064381" duration="6233000" />
       <workItem from="1607095666411" duration="21407000" />
       <workItem from="1607198812251" duration="5968000" />
-      <workItem from="1607275690901" duration="978000" />
+      <workItem from="1607275690901" duration="2181000" />
+      <workItem from="1607291817917" duration="1555000" />
+      <workItem from="1607376735174" duration="673000" />
+      <workItem from="1607383966363" duration="1176000" />
     </task>
     <servers />
   </component>

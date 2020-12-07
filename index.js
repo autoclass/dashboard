@@ -148,6 +148,14 @@ $(
 
 $(
     () => {
+        $(document).on("resetAhk", () => {
+            socket.emit("reset", {target: $('#single-user-select').val()});
+        });
+    }
+)
+
+$(
+    () => {
         $('#connect-btn').click(e => {
             e.preventDefault();
             socket && socket.close();
