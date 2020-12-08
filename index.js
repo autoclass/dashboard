@@ -96,19 +96,23 @@ $(
             e.preventDefault();
             const selectedClass = classes.find(x => x.className === $('#all-user-existing-class').val());
             socket.emit('join', {platform: selectedClass.platform, opts: selectedClass.opts});
+            addToLog(`Sent everybody to ${selectedClass.className}`);
         });
 
         $('#all-user-custom-class-join').click(e => {
             e.preventDefault();
+            const platform = $('#all-user-custom-class-platform').val();
             socket.emit('join', {
-                platform: $('#all-user-custom-class-platform').val(),
+                platform: platform,
                 opts: $('#all-user-custom-class-url').val()
             });
+            addToLog(`Sent everybody to custom class on ${platform}`);
         });
 
         $('#all-user-leave').click(e => {
             e.preventDefault();
             socket.emit('leave');
+            addToLog(`Deported everybody from class`);
         })
     }
 );
@@ -120,28 +124,34 @@ $(
             const selectedClass = classes.find(x => x.className === $('#single-user-existing-class').val());
             const target = $('#single-user-select').val();
             socket.emit('join', {platform: selectedClass.platform, opts: selectedClass.opts, target});
+            addToLog(`Sent ${target} to ${selectedClass.className}`);
         });
 
         $('#single-user-custom-class-join').click(e => {
             e.preventDefault();
             const target = $('#single-user-select').val();
+            const platform = $('#single-user-custom-class-url').val();
             socket.emit('join', {
                 platform: $('#single-user-custom-class-platform').val(),
-                opts: $('#single-user-custom-class-url').val(),
+                opts: platform,
                 target
             });
+            addToLog(`Sent ${target} to custom class on ${platform}`);
         });
 
         $('#single-user-leave').click(e => {
             e.preventDefault();
             const target = $('#single-user-select').val();
             socket.emit('leave', {target});
+            addToLog(`Told ${target} to leave class`);
         });
 
         $('#single-user-unmute').click(e => {
             e.preventDefault();
             const target = $('#single-user-select').val();
-            socket.emit('unmute', {length: JSON.parse($('#single-user-unmute-seconds').val()), target});
+            const length = $('#single-user-unmute-seconds').val();
+            socket.emit('unmute', {length, target});
+            addToLog(`Unmuted ${target} for ${length}s`);
         });
     }
 );
