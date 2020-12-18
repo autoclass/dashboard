@@ -135,3 +135,7 @@ button.close[aria-label="Delete"] > span {
     @include font-size(10pt);
   }
 }
+
+.list-group-item:hover {
+  background: $gray-300;
+}
